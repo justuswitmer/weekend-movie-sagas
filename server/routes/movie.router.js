@@ -51,4 +51,15 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+  console.log('in router.get details', req.params.id);
+  const queryText = 'SELECT * FROM "movie" WHERE id=$1';
+  pool.query(queryText, [req.params.id])
+    .then((result) => { res.send(result.rows); })
+    .catch((err) => {
+      console.log('Error completing SELECT detail query', err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

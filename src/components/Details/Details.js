@@ -7,10 +7,20 @@ class Details extends Component {
   render() {
     return (
       <div>
-        In Details
+        {this.props.detail.map(detail =>
+          <div key={detail.id}>
+            <p>{detail.title}</p>
+            <img src={detail.poster} alt={detail.title} />
+            <p>{detail.description}</p>
+          </div>
+        )}
       </div>
     )
   }
 }
 
-export default connect()(withRouter(Details));
+const mapStateToProps = reduxState => ({
+  detail: reduxState.detail
+})
+
+export default connect(mapStateToProps)(withRouter(Details));
