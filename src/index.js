@@ -23,7 +23,7 @@ function* fetchMovies(action) {
     console.log('hit fetchMovies', action);
     let response = yield axios({
         method: 'GET',
-        url: '/movie'
+        url: '/api/movie'
     });
     yield put({
         type: 'SET_MOVIES',

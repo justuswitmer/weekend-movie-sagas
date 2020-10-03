@@ -16,13 +16,19 @@ class Home extends Component {
   render() {
     return (
       <div>
-        In Home
-        <HomeListItem />
+        {this.props.movies.map(movie =>
+          <HomeListItem
+            key={movie.id}
+            movie={movie}
+          />
+        )}
       </div>
     )
   }
 }
 
+const mapStateToProps = reduxState => ({
+  movies: reduxState.movies
+});
 
-
-export default connect()(withRouter(Home));
+export default connect(mapStateToProps)(withRouter(Home));

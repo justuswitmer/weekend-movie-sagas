@@ -1,11 +1,11 @@
 [] take inventory of current code, some saga stuff has been done
 
 ### Home Page
-[] display all of the movies
-  [] write a GET route in Home.js
+[x] display all of the movies
+  [x] write a GET route in Home.js
     look at redux-saga-garden
-[] When a movie is clicked, take the user to the `/details` view
-  [] need withRouter, push
+[x] When a movie is clicked, take the user to the `/details` view
+  [x] need withRouter, push
     look at react-gallery
 
 
