@@ -12,6 +12,7 @@ class Details extends Component {
             <p>{detail.title}</p>
             <img src={detail.poster} alt={detail.title} />
             <p>{detail.description}</p>
+            <p>{detail.name}</p>
           </div>
         )}
         <button

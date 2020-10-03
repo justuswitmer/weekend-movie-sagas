@@ -53,7 +53,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   console.log('in router.get details', req.params.id);
-  const queryText = 'SELECT * FROM "movie" WHERE id=$1';
+  const queryText = 'SELECT * FROM movie JOIN junction ON movie.id = junction.movie_id JOIN genre ON junction.genre_id=genre.id WHERE movie.id=$1;';
   pool.query(queryText, [req.params.id])
     .then((result) => { res.send(result.rows); })
     .catch((err) => {

@@ -13,9 +13,9 @@
 
 This should show all details **including genres**, for the selected movie.
 
-[] make a GET for a specific movie
+[x] make a GET for a specific movie
   display details on DOM
-[] include button, `Back to List`, which returns use to the Home Page
+[x] include button, `Back to List`, which returns use to the Home Page
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
 
