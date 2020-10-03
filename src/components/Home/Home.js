@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import HomeListItem from '../HomeListItem/HomeListItem';
+import HomeListItem from '../Header/HomeListItem';
 
 class Home extends Component {
 
@@ -15,7 +15,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className='homeDiv'>
         {this.props.movies.map(movie =>
           <HomeListItem
             key={movie.id}

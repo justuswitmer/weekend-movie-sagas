@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, HashRouter as Router, Route, Link } from 'react-router-dom';
+import { withRouter, HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class AddMovie extends Component {
