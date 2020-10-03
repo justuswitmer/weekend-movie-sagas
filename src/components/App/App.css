@@ -3,13 +3,15 @@
   background-color: #240b0b;
 }
 
+h2 {
+  color: whitesmoke;
+}
 
 .headerDiv {
   background-color: #222;
   padding-top: 45.5px;
   height: 130px;
-
-  color: white;
+  color: whitesmoke;
 }
 
 .App-title {
