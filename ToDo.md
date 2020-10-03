@@ -1,6 +1,6 @@
-[] take inventory of current code, some saga stuff has been done
+[x] take inventory of current code, some saga stuff has been done
 
-### Home Page
+### Home Page DONE
 [x] display all of the movies
   [x] write a GET route in Home.js
     look at redux-saga-garden
@@ -9,7 +9,7 @@
     look at react-gallery
 
 
-### Details Page
+### Details Page DONE
 
 This should show all details **including genres**, for the selected movie.
 
@@ -22,13 +22,13 @@ This should show all details **including genres**, for the selected movie.
 ### Add Movie Page
 This should show:
 
-[] an input field (for the movie title)
-[] an input field (for the movie poster image URL))
-[] a textarea (for the movie description)
-[] a dropdown (for the genres)
+[x] an input field (for the movie title)
+[x] an input field (for the movie poster image URL))
+[x] a textarea (for the movie description)
+[x] a dropdown (for the genres)
 
 Have the buttons:
-[] `Cancel` button, which should bring the user to the Home/List Page
+[x] `Cancel` button, which should bring the user to the Home/List Page
 [] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
 
 > Hint: Look at the /api/movie POST route -- it's been made already
