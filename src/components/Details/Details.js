@@ -14,6 +14,10 @@ class Details extends Component {
             <p>{detail.description}</p>
           </div>
         )}
+        <button
+          onClick={() => this.props.history.push('/')}
+        >Return to Movie List
+        </button>
       </div>
     )
   }
