@@ -19,7 +19,7 @@ This should show all details **including genres**, for the selected movie.
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
 
-### Add Movie Page
+### Add Movie Page DONE
 This should show:
 
 [x] an input field (for the movie title)
@@ -29,7 +29,7 @@ This should show:
 
 Have the buttons:
 [x] `Cancel` button, which should bring the user to the Home/List Page
-[] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
+[x] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
 
 > Hint: Look at the /api/movie POST route -- it's been made already
 > Hint: You'll want to use the genres that are in the db for your dropdown
