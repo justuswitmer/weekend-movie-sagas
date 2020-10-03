@@ -3,6 +3,14 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class AddMovie extends Component {
+
+  selectGenre = () => {
+    console.log('in selectGenre');
+    this.props.dispatch({
+      type: 'FETCH_GENRES'
+    });
+  }
+
   render() {
     return (
       <div>
@@ -19,7 +27,7 @@ class AddMovie extends Component {
           type='text'
           placeholder='description'
         />
-        <select>
+        <select onSelect={this.selectGenre}>
           <option value=''></option>
           <option value='adventure'>Adventure</option>
           <option value='animated'>Animated</option>
@@ -41,10 +49,17 @@ class AddMovie extends Component {
         </button>
         <button>Save</button>
 
-
+        <button onClick={this.selectGenre}>Genre</button>
+        {this.props.genres.map(genre =>
+          <p>{genre.name}</p>
+        )}
       </div>
     )
   }
 }
 
-export default connect()(withRouter(AddMovie));
+const mapStateToProps = reduxState => ({
+  genres: reduxState.genres
+});
+
+export default connect(mapStateToProps)(withRouter(AddMovie));
