@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #222;
 }
 
 
@@ -28,6 +29,9 @@ li {
   margin: 30px;
 }
 
-.imageDisplay {
+.imageDiv {
   display: inline-block;
+  width: 250px;
+  margin: 10px;
+  height: 300px;
 }

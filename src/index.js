@@ -60,7 +60,7 @@ function* fetchGenres(action) {
     });
 }
 
-// generator 
+// generator adding movie details to movie and genre database
 function* addMovie(action) {
     console.log('hit addMovie; here is my action', action);
     yield axios({

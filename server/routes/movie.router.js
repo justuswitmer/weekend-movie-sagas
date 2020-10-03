@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  const queryString = `SELECT * FROM "movie";`;
+  const queryString = `SELECT * FROM "movie" ORDER BY "id" DESC;`;
   pool.query(queryString)
     .then(result => {
       res.send(result.rows);

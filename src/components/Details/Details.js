@@ -28,4 +28,4 @@ const mapStateToProps = reduxState => ({
   detail: reduxState.detail
 })
 
-export default connect(mapStateToProps)(withRouter(Details));
+export default connect(mapStateToProps)(withRouter(Details)); 
