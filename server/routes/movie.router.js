@@ -62,4 +62,27 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+  console.log('in router.put. req.body:', req.body, 'req.params.id:', req.params.id);
+  const updatedDetail = req.body;
+  let id = req.params.id;
+  const queryText = `UPDATE movie
+  SET "title" = $1, 
+  "description" = $2 
+  WHERE id=$3;`;
+
+  const queryValues = [
+    updatedDetail.title,
+    updatedDetail.description,
+    id
+  ];
+
+  pool.query(queryText, queryValues)
+    .then(() => { res.sendStatus(200); })
+    .catch((err) => {
+      console.log('Error completing SELECT detail query', err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
