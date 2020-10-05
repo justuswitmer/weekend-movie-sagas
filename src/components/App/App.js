@@ -6,7 +6,6 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import './App.css';
-import { Button } from '@material-ui/core';
 import Admin from '../Admin/Admin';
 
 class App extends Component {

@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-import { put, takeEvery } from 'redux-saga/effects';
+import { takeEvery } from 'redux-saga/effects';
 
 // reducer imports
 import genres from './redux/reducers/genres.reducer';
@@ -21,7 +21,8 @@ import fetchMovies from './redux/saga/fetchMovies.saga';
 import fetchGenres from './redux/saga/fetchGenres.saga';
 import fetchDetail from './redux/saga/fetchDetail.saga';
 import addMovie from './redux/saga/addMovie.saga';
-import Axios from 'axios';
+import updateDetail from './redux/saga/updateDetail.saga';
+
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -32,17 +33,6 @@ function* rootSaga() {
     yield takeEvery('UPDATE_DETAIL', updateDetail)
 }
 
-function* updateDetail(action) {
-    console.log('hit updateDetail and here is my action', action);
-    yield Axios({
-        method: 'PUT',
-        url: action.url,
-        data: action.payload
-    });
-    yield put({
-        type: 'FETCH_DETAIL'
-    });
-}
 
 
 // Create sagaMiddleware
