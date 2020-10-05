@@ -55,8 +55,19 @@ a {
 }
 
 main {
+  display: flex;
   padding-top: 30px;
   margin-right: 0;
+}
+
+.linkDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.adminDiv {
+  display: flex;
+  justify-content: right;
 }
 
 .imageDiv {
@@ -91,8 +102,6 @@ main {
   padding: 10px;
 }
 
-
-
 .footerDiv {
   width: 100%;
   padding-top: 400px;
@@ -102,9 +111,7 @@ main {
   padding-top: 30px
 }
 
-
 .navBtnAdmin {
- 
   text-decoration: none;
   background-color: #345081;
   margin-left: 300px;
