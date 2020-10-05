@@ -51,65 +51,71 @@ class AddMovie extends Component {
     return (
       <Router>
         <Paper
-          id="paperInPaper"
+          id="paper"
           elevation={3}
         >
           <Route
             exact path='/addmovie'
           >
             <h2>Add a Movie!</h2>
-            <TextField
-              id="outlined-basic"
-              label="title"
-              variant="outlined"
-              onChange={(event) => this.handleChange('title', event)}
-            />
-            <TextField
-              id="outlined-basic"
-              label="poster link"
-              variant="outlined"
-              onChange={(event) => this.handleChange('poster', event)}
-            />
-            <TextField
-              multiline
-              rowsMax={6}
-              id="outlined-basic"
-              label="description"
-              variant="outlined"
-              onChange={(event) => this.handleChange('description', event)}
-            />
-            <FormControl variant="outlined" required>
-              <InputLabel id='dropdownList'>genre</InputLabel>
-              <Select
-                labelId="demo-simple-select-required-label"
-                id="selectList"
-                onChange={(event) => this.handleChange('genre_id', event)}
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                {this.props.genres.map(genre =>
-                  <MenuItem
-                    key={genre.id}
-                    value={genre.id}
-                  >{genre.name}
-                  </MenuItem>
-                )}
-              </Select>
-              <FormHelperText>Required</FormHelperText>
-            </FormControl>
-            <Button
-              id="formatBtn"
-              variant="contained"
-              onClick={() => this.props.history.push('/')}
-            >Cancel
-            </Button>
-            <Button
-              id="formatBtn"
-              variant="contained"
-              onClick={this.addMovie}
-            >Save
-            </Button>
+            <div className='addMovieDiv'>
+              <div>
+                <TextField
+                  id="outlined-basic"
+                  label="title"
+                  variant="outlined"
+                  onChange={(event) => this.handleChange('title', event)}
+                />
+                <TextField
+                  id="outlined-basic"
+                  label="poster link"
+                  variant="outlined"
+                  onChange={(event) => this.handleChange('poster', event)}
+                />
+                <TextField
+                  multiline
+                  rowsMax={6}
+                  id="outlined-basic"
+                  label="description"
+                  variant="outlined"
+                  onChange={(event) => this.handleChange('description', event)}
+                />
+                <FormControl variant="outlined" required>
+                  <InputLabel id='dropdownList'>genre</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-required-label"
+                    id="selectList"
+                    onChange={(event) => this.handleChange('genre_id', event)}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    {this.props.genres.map(genre =>
+                      <MenuItem
+                        key={genre.id}
+                        value={genre.id}
+                      >{genre.name}
+                      </MenuItem>
+                    )}
+                  </Select>
+                  <FormHelperText>Required</FormHelperText>
+                </FormControl>
+              </div>
+              <div>
+                <Button
+                  id="formatBtn"
+                  variant="contained"
+                  onClick={() => this.props.history.push('/')}
+                >Cancel
+                </Button>
+                <Button
+                  id="formatBtn"
+                  variant="contained"
+                  onClick={this.addMovie}
+                >Save
+                </Button>
+              </div>
+            </div>
           </Route>
           <Route
             path='/addmovie/thanks'

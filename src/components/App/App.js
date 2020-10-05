@@ -17,15 +17,11 @@ class App extends Component {
         <div className="App">
           <Header />
           <nav>
-            <main>
-              <div className='linkDiv'>
-                <li class='navBtn'><Link to="/">Home</Link></li>
-                <li class='navBtn'><Link to="/addmovie">Add Movie</Link></li>
-                <li class='navBtn'><a href="http://www.google.com">Google</a></li>
-              </div>
-              <div className='adminDiv'>
-                <Button class='navBtnAdmin'><Link to="/admin">Admin</Link></Button>
-              </div>
+            <main className='mainDiv'>
+              <li id='navli1'><Link to="/">Home</Link></li>
+              <li id='navli2'><Link to="/addmovie">Add Movie</Link></li>
+              <li id='navli3'><a href="http://www.google.com">Google</a></li>
+              <li id='navliAdmin'><Link to="/admin">Admin</Link></li>
             </main>
           </nav>
           <Route path='/admin'>

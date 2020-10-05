@@ -1,0 +1,14 @@
+.headerDiv {
+  background-image: url('./headerBackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 40.5px;
+  height: 350px;
+}
+
+h1 {
+margin-top: 130.75px;
+color: #f3c2c2;
+font-size: 60px;
+}
