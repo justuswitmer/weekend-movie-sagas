@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { withRouter, HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Paper, Button, TextField, } from '@material-ui/core';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import './AddMovie.css';
 
 class AddMovie extends Component {
 
@@ -43,55 +50,85 @@ class AddMovie extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Paper
+          id="paperInPaper"
+          elevation={3}
+        >
           <Route
             exact path='/addmovie'
           >
             <h2>Add a Movie!</h2>
-            <input
-              type='text'
-              placeholder='Title'
+            <TextField
+              id="outlined-basic"
+              label="title"
+              variant="outlined"
               onChange={(event) => this.handleChange('title', event)}
             />
-            <input
-              type='url'
-              placeholder='poster link'
+            <TextField
+              id="outlined-basic"
+              label="poster link"
+              variant="outlined"
               onChange={(event) => this.handleChange('poster', event)}
             />
-            <input
-              type='text'
-              placeholder='description'
+            <TextField
+              multiline
+              rowsMax={6}
+              id="outlined-basic"
+              label="description"
+              variant="outlined"
               onChange={(event) => this.handleChange('description', event)}
             />
-            <select
-              onChange={(event) => this.handleChange('genre_id', event)}
-            >
-              <option></option>
-              {this.props.genres.map(genre =>
-                <option
-                  key={genre.id}
-                  value={genre.id}
-                >{genre.name}
-                </option>
-              )}
-            </select>
-            <button
+            <FormControl variant="outlined" required>
+              <InputLabel id='dropdownList'>genre</InputLabel>
+              <Select
+                labelId="demo-simple-select-required-label"
+                id="selectList"
+                onChange={(event) => this.handleChange('genre_id', event)}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                {this.props.genres.map(genre =>
+                  <MenuItem
+                    key={genre.id}
+                    value={genre.id}
+                  >{genre.name}
+                  </MenuItem>
+                )}
+              </Select>
+              <FormHelperText>Required</FormHelperText>
+            </FormControl>
+            <Button
+              id="formatBtn"
+              variant="contained"
               onClick={() => this.props.history.push('/')}
             >Cancel
-        </button>
-            <button
+            </Button>
+            <Button
+              id="formatBtn"
+              variant="contained"
               onClick={this.addMovie}
             >Save
-        </button>
+            </Button>
           </Route>
           <Route
             path='/addmovie/thanks'
           >
             <h1>Thanks for adding a movie!</h1>
-            <button onClick={() => this.props.history.push('/')}>View Movie in List</button>
-            <button onClick={() => this.props.history.push('/addmovie')}>Add Another Movie</button>
+            <Button
+              id="formatBtn"
+              variant="contained"
+              onClick={() => this.props.history.push('/')}
+            >View Movie in List
+            </Button>
+            <Button
+              id="formatBtn"
+              variant="contained"
+              onClick={() => this.props.history.push('/addmovie')}
+            >Add Another Movie
+          </Button>
           </Route>
-        </div>
+        </Paper>
       </Router >
     )
   }

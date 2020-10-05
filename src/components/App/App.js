@@ -18,10 +18,14 @@ class App extends Component {
           <Header />
           <nav>
             <main>
-              <Button variant="contained" class='navBtn'><Link to="/">Home</Link></Button>
-              <Button variant="contained" class='navBtn'><Link to="/addmovie">Add Movie</Link></Button>
-              <Button variant="contained" class='navBtn'><a href="http://www.google.com">Google</a></Button>
-              <Button variant="contained" class='navBtnAdmin'><Link to="/admin">Admin</Link></Button>
+              <div className='linkDiv'>
+                <li class='navBtn'><Link to="/">Home</Link></li>
+                <li class='navBtn'><Link to="/addmovie">Add Movie</Link></li>
+                <li class='navBtn'><a href="http://www.google.com">Google</a></li>
+              </div>
+              <div className='adminDiv'>
+                <Button class='navBtnAdmin'><Link to="/admin">Admin</Link></Button>
+              </div>
             </main>
           </nav>
           <Route path='/admin'>
