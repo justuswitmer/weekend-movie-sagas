@@ -92,5 +92,9 @@ li:hover {
   transform: scale(1.04);
 }
 
+li {
+  list-style-type: none;
+}
+
 
 
